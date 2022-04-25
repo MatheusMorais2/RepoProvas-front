@@ -6,7 +6,7 @@ import LoginForm from "../components/LoginForm";
 export default function LoginPage() {
   return (
     <Page>
-      <LogoComponent />
+      <LogoComponent origin={"auth"} />
       <FormContainer>
         <Header>Login</Header>
         <GithubButton />
@@ -21,6 +21,7 @@ const Page = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 55px;
 `;
 
 const FormContainer = styled.div`

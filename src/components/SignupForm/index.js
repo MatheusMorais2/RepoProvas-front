@@ -17,7 +17,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 export default function SignupForm() {
   const navigate = useNavigate();
-  const setUserData = useContext(UserContext);
+  const { setUserData } = useContext(UserContext);
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -43,8 +43,9 @@ export default function SignupForm() {
       }
     );
     if (response.status === 201) {
+      console.log("response.data: ", response);
       setUserData(response.data);
-      navigate("/main", { replace: true });
+      navigate("/", { replace: true });
       return;
     }
 

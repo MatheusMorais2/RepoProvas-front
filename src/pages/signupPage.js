@@ -6,9 +6,9 @@ import SignupForm from "../components/SignupForm";
 export default function SignupPage() {
   return (
     <Page>
-      <LogoComponent />
+      <LogoComponent origin={"auth"} />
       <FormContainer>
-        <Header>Login</Header>
+        <Header>Cadastro</Header>
         <GithubButton />
         <SignupForm />
       </FormContainer>

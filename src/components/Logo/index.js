@@ -1,11 +1,13 @@
 import logo from "./logo.png";
 import styled from "styled-components";
 
-export default function LogoComponent() {
-  return <Logo src={logo} alt="RepoProvas logo" />;
+export default function LogoComponent({ origin }) {
+  return <Logo origin={origin} src={logo} alt="RepoProvas logo" />;
 }
 
 const Logo = styled.img`
-  margin-top: 55px;
-  margin-bottom: 20vh;
+  margin-bottom: ${(props) => {
+    if (props.origin === "auth") return "20vh";
+    else return 0;
+  }};
 `;

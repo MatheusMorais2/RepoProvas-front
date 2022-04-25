@@ -17,7 +17,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 export default function LoginForm() {
   const navigate = useNavigate();
-  const setUserData = useContext(UserContext);
+  const { setUserData } = useContext(UserContext);
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -37,6 +37,7 @@ export default function LoginForm() {
       { email: values.email, password: values.password }
     );
     if (response.status === 200) {
+      console.log("response.data: ", response.data);
       setUserData(response.data);
       navigate("/main", { replace: true });
       return;
@@ -98,7 +99,7 @@ export default function LoginForm() {
       </FormControl>
 
       <Bottom>
-        <ToSignup to="/auth/signup">Não possuo cadastro</ToSignup>
+        <ToSignup to="/signup">Não possuo cadastro</ToSignup>
 
         <Button variant="contained" type="submit" disabled={values.error}>
           ENTRAR
